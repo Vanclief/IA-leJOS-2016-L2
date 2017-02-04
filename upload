@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ -z "$1" ]; then
+	echo "Falta el nombre del archivo"
+else
+	echo "Starting Link"
+	nxjc "$1.java"
+	nxjlink -o "$1.nxj" $1
+	nxjupload -r "$1.nxj"
+	echo "Upload finished"
+fi
